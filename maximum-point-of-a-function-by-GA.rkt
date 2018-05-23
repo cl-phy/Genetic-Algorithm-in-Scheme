@@ -1,13 +1,11 @@
 #lang racket
 (require "./Genetic-Algorithm.rkt")
 
-;;to count the times of calling fitness
-(define count 0)
-
 (define Maximum-point-of-a-function-by-GA ;in region [0,1]
   (lambda (function)
     ;;return: the point that gives the Maximum-value and the Maximum-value
-    (let* ([crossover
+    (let* ([count 0];;to count the times of calling fitness
+           [crossover
             (lambda (father mother)
               (let* ([alpha (random)]
                      [beta (- 1 alpha)])
@@ -36,7 +34,7 @@
 ;;test-1
 ;;function: f(x) = sin(pi*x)
 ;;the maximum  is 1 at 1/2.
-;(Maximum-point-of-a-function-by-GA (lambda (x) (sin (* pi x))))
+(Maximum-point-of-a-function-by-GA (lambda (x) (sin (* pi x))))
 
 ;;test-2
 ;;function: f(x)= -x * (x-1/3)^2 * (x-1)
@@ -50,4 +48,3 @@
                                      (+ (* x 9.0)
                                         (* 10 (sin (* x 45)))
                                         (* 7 (cos (* x 36))))))
-
