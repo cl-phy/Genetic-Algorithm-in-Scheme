@@ -1,2 +1,2 @@
 # Genetic-Algorithm-in-Scheme
-Genetic Algorithm in Scheme codes
+Genetic Algorithm in Scheme/Racket codes
